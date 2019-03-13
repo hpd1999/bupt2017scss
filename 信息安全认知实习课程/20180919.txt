@@ -1,0 +1,30 @@
+sql注入实验
+sql基础
+结构化的查询语言
+查询 select <statement> from <table> where <condition>
+删除 delete from <table> where <condition>
+更新 update <table> set where <condition>
+插入自学
+
+sql注入：把sql命令插入到web表单或输入域名或页面请求的查询字符串，欺骗服务器
+
+注入原理——表单实例
+猜想：判断语句为
+SELECT * From Table WHERE Name='xx' and Password='yy'
+把xx替换成你的名字和一个永真句和 ‘--’（←--后面的语句都被注释掉了，相当于绕过了密码）
+几种替换方式，需要尝试
+' or 1=1
+" or 1=1
+' or 'a'='a
+" or " =a
+学号' or 1=1; #
+
+跨站脚本攻击（xss）
+利用js脚本对用户实施攻击
+<script>
+/codes.../
+</script>
+先测试 alert(1)
+常用的 alert(document.cookie)
+          window.open('<site>')  //打开空白页
+在username里输入代码攻击
