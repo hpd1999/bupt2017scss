@@ -1,0 +1,5 @@
+x=[0:0.2:28];
+y=sin(x);
+
+figure
+plot(x,y);
